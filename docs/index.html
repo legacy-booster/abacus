@@ -106,23 +106,23 @@
       <p class="text-center">See how LegacyBoost can transform your legacy systems into a competitive advantage.</p>
       
       <div class="form-container">
-        <form>
+        <form id="demo-form">
           <div class="form-group">
-            <input type="text" placeholder="Name" class="form-control" required>
+            <input type="text" id="demo-name" placeholder="Name" class="form-control" required>
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Company" class="form-control" required>
+            <input type="text" id="demo-company" placeholder="Company" class="form-control" required>
           </div>
           <div class="form-group">
-            <input type="email" placeholder="Work email" class="form-control" required>
+            <input type="email" id="demo-email" placeholder="Work email" class="form-control" required>
           </div>
           <div class="form-group">
-            <select class="form-control" required>
+            <select id="demo-team-size" class="form-control" required>
               <option value="" disabled selected>Team size</option>
-              <option>1-10</option>
-              <option>11-50</option>
-              <option>51-200</option>
-              <option>201+</option>
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="201+">201+</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary btn-lg">Request Demo</button>
@@ -137,9 +137,9 @@
       <p class="text-center">Learn how leading CTOs are turning technical debt into technical wealth.</p>
       
       <div class="form-container">
-        <form>
+        <form id="whitepaper-form">
           <div class="form-group">
-            <input type="email" placeholder="Work email" class="form-control" required>
+            <input type="email" id="whitepaper-email" placeholder="Work email" class="form-control" required>
           </div>
           <button type="submit" class="btn btn-primary btn-lg">Download Whitepaper</button>
         </form>
@@ -183,5 +183,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/form-handler.js"></script>
 </body>
 </html>

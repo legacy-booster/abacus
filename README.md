@@ -15,7 +15,7 @@ LegacyBoost helps engineering leaders transform legacy systems from innovation b
 
 ## Documentation
 
-Visit our [GitHub Pages site](https://your-org.github.io/abacus/) for complete documentation and guides.
+Visit our [GitHub Pages site](https://legacy-boost.github.io/abacus/) for complete documentation and guides.
 
 ## GitHub Pages Website
 
@@ -36,6 +36,20 @@ To run the website locally:
 - Edit the Markdown files in `/docs` to update content
 - Modify `_config.yml` to change site-wide settings
 - Update CSS in `/docs/assets/css/style.scss`
+
+### Demo Request Feature
+
+The website includes a demo request form that connects to n8n for lead capture and email notifications:
+
+- Form submissions are sent to an n8n workflow via webhook
+- Leads are stored in a database and trigger email notifications
+- Setup instructions are available in `docs/n8n-integration.md`
+
+To configure the n8n webhook:
+
+1. Set up the n8n workflow following the instructions in the integration doc
+2. Update the `N8N_WEBHOOK_URL` variable in `docs/assets/js/form-handler.js`
+3. Test the form submission to ensure proper functionality
 
 ## License
 
