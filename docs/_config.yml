@@ -1,12 +1,13 @@
 title: LegacyBoost
 description: Ship Legacy Code 5x Faster Without Risky Rewrites
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol
+baseurl: ""
+url: ""
 
-# Theme settings
-theme: jekyll-theme-cayman
-show_downloads: false
-google_analytics: 
+# Theme settings - using minimal theme for a cleaner look
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
 
 # Navigation
 nav:
@@ -21,16 +22,3 @@ nav:
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-remote-theme
-  - jekyll-seo-tag
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/

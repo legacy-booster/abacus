@@ -8,8 +8,17 @@ This directory contains the source files for the LegacyBoost GitHub Pages websit
 - `index.md` - Home page content
 - `features.md`, `pricing.md`, `about.md` - Additional pages
 - `assets/css/style.scss` - Custom styling
+- `assets/js/main.js` - JavaScript functionality
 - `_layouts/default.html` - Custom layout template
 - `_includes/` - Reusable HTML snippets
+
+## Design Features
+
+- **Modern Design** - Clean, professional layout with ample whitespace
+- **Mobile Responsive** - Optimized for all device sizes with mobile menu
+- **Conversion Focused** - Strategic CTAs and forms placed for high conversion
+- **Custom CSS** - Professionally styled components and animations
+- **Interactive Elements** - ROI calculator, FAQ accordion, and more
 
 ## Local Development
 
@@ -31,3 +40,11 @@ To run this site locally:
 ## GitHub Pages Configuration
 
 The site is configured to be built from the `/docs` folder on the `main` branch. No additional configuration is needed.
+
+## Implementation Details
+
+- Uses Jekyll with minimal theme as a foundation
+- Custom CSS with modern variables for consistent styling
+- FontAwesome icons for visual elements
+- Responsive design with mobile-first approach
+- JavaScript for interactive components
