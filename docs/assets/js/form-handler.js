@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         body: JSON.stringify({
           email: email,
-          formType: 'whitepaper',
+          formType: 'whitePaper',
           source: window.location.href,
           timestamp: new Date().toISOString()
         })
