@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const whitepaperForm = document.getElementById('whitepaper-form');
   
   // N8n webhook URL - replace this with your actual n8n webhook URL
-  const N8N_WEBHOOK_URL = 'https://your-n8n-instance.cloud/webhook/demo-request';
+  const N8N_WEBHOOK_URL = 'https://prasannak.app.n8n.cloud/webhook-test/demo-request';
   
   // Handle demo request form submission
   if (demoForm) {
