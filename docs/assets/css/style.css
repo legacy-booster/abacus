@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --bg-light: #f3f4f6;
-  --text-dark: #1f2937;
-  --text-light: #6b7280;
+  --primary-color: #8bb9dd;
+  --secondary-color: #6d96b8;
+  --bg-light: #f4f7fa;
+  --text-dark: #394b59;
+  --text-light: #7e8c9a;
 }
 
 * {
@@ -29,7 +29,7 @@ body {
 /* Header */
 .site-header {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -126,7 +126,7 @@ h2 {
   background: white;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
 }
 
@@ -155,7 +155,7 @@ h2 {
   padding: 1.5rem;
   background: white;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 /* Testimonials */
@@ -165,7 +165,7 @@ h2 {
   padding: 2rem;
   background: white;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .quote {
@@ -183,7 +183,7 @@ h2 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: #e9ecef;
   margin-right: 1rem;
 }
 
@@ -217,8 +217,8 @@ h2 {
 /* CTA section */
 .cta-section {
   text-align: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  background: linear-gradient(135deg, #a6c1ee, #c5daff);
+  color: var(--text-dark);
 }
 
 .cta-section h2 {
@@ -233,18 +233,18 @@ h2 {
 }
 
 .cta-section .btn-outline {
-  border-color: white;
-  color: white;
+  border-color: var(--text-dark);
+  color: var(--text-dark);
 }
 
 .cta-section .btn-outline:hover {
-  background-color: white;
-  color: var(--primary-color);
+  background-color: var(--text-dark);
+  color: white;
 }
 
 /* Footer */
 .site-footer {
-  background-color: #1f2937;
+  background-color: #495b69;
   color: white;
   padding: 3rem 0;
 }
@@ -297,8 +297,8 @@ h2 {
 .copyright {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid #374151;
-  color: #9ca3af;
+  border-top: 1px solid #5a6a78;
+  color: #a9b3bd;
 }
 
 /* Responsive */
