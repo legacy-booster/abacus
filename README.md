@@ -1,10 +1,10 @@
-# LegacyBoost (Abacus)
+# ShipFast (Abacus)
 
 Ship Legacy Code 5x Faster Without Risky Rewrites
 
 ## About
 
-LegacyBoost helps engineering leaders transform legacy systems from innovation bottlenecks to competitive advantages. Deploy faster, reduce incidents, and modernize incrementally without risky rewrites or expensive consultants.
+ShipFast helps engineering leaders transform legacy systems from innovation bottlenecks to competitive advantages. Deploy faster, reduce incidents, and modernize incrementally without risky rewrites or expensive consultants.
 
 ## Key Features
 
@@ -15,7 +15,7 @@ LegacyBoost helps engineering leaders transform legacy systems from innovation b
 
 ## Documentation
 
-Visit our [GitHub Pages site](https://legacy-boost.github.io/abacus/) for complete documentation and guides.
+Visit our [GitHub Pages site](https://lumix-labs.github.io/abacus/) for complete documentation and guides.
 
 ## GitHub Pages Website
 

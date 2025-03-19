@@ -159,8 +159,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "info@legacyboost.com",
-        "toEmail": "sales@legacyboost.com",
+        "fromEmail": "info@lumix-labs.com",
+        "toEmail": "sales@lumix-labs.com",
         "subject": "New Demo Request: {{$node[\"Format Demo Data\"].json[\"company\"]}}",
         "text": "=New Demo Request Received:\n\nName: {{$node[\"Format Demo Data\"].json[\"name\"]}}\nCompany: {{$node[\"Format Demo Data\"].json[\"company\"]}}\nEmail: {{$node[\"Format Demo Data\"].json[\"email\"]}}\nTeam Size: {{$node[\"Format Demo Data\"].json[\"teamSize\"]}}\nSource: {{$node[\"Format Demo Data\"].json[\"source\"]}}\nDate: {{$node[\"Format Demo Data\"].json[\"dateSubmitted\"]}}\n\nPlease follow up within 24 hours.",
         "options": {}
@@ -174,10 +174,10 @@
     },
     {
       "parameters": {
-        "fromEmail": "info@legacyboost.com",
+        "fromEmail": "info@lumix-labs.com",
         "toEmail": "={{$node[\"Format Whitepaper Data\"].json[\"email\"]}}",
-        "subject": "Your LegacyBoost Whitepaper",
-        "text": "=Thank you for your interest in LegacyBoost!\n\nYou can download your whitepaper here: https://legacyboost.com/downloads/LegacyBoost-Whitepaper.pdf\n\nIf you have any questions, please don't hesitate to contact us.\n\nBest regards,\nThe LegacyBoost Team",
+        "subject": "Your ShipFast Whitepaper",
+        "text": "=Thank you for your interest in ShipFast!\n\nYou can download your whitepaper here: https://lumix-labs.com/downloads/ShipFast-Whitepaper.pdf\n\nIf you have any questions, please don't hesitate to contact us.\n\nBest regards,\nThe ShipFast Team at Lumix Labs",
         "options": {}
       },
       "name": "Send Whitepaper Email",
