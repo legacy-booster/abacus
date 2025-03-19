@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (typeof gtag === 'function') {
           gtag('event', 'demo_request', {
             'event_category': 'form',
-            'event_label': 'executive_demo'
+            'event_label': 'executive_demo',
+            'product_focus': 'bigtech_capabilities'
           });
         }
       })
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         body: JSON.stringify({
           email: email,
           formType: 'whitePaper',
+          whitePaperType: 'engineering_excellence',
           source: window.location.href,
           timestamp: new Date().toISOString()
         })
@@ -121,21 +123,22 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(data => {
         // Show success message and download link
-        whitepaperForm.innerHTML = '<div class="success-message"><h3>Thank you!</h3><p>Your whitepaper is ready. <a href="assets/files/LegacyBoost-Whitepaper.pdf" download>Download now</a></p></div>';
+        whitepaperForm.innerHTML = '<div class="success-message"><h3>Thank you!</h3><p>Your whitepaper is ready. <a href="assets/files/LegacyBoost-Engineering-Excellence.pdf" download>Download now</a></p></div>';
         
         // Track form submission event (if analytics is set up)
         if (typeof gtag === 'function') {
           gtag('event', 'whitepaper_download', {
             'event_category': 'form',
-            'event_label': 'legacy_acceleration'
+            'event_label': 'engineering_excellence',
+            'whitepaper_type': 'engineering_excellence'
           });
         }
         
         // After a delay, automatically trigger the download
         setTimeout(function() {
           const downloadLink = document.createElement('a');
-          downloadLink.href = 'assets/files/LegacyBoost-Whitepaper.pdf';
-          downloadLink.download = 'LegacyBoost-Whitepaper.pdf';
+          downloadLink.href = 'assets/files/LegacyBoost-Engineering-Excellence.pdf';
+          downloadLink.download = 'LegacyBoost-Engineering-Excellence.pdf';
           document.body.appendChild(downloadLink);
           downloadLink.click();
           document.body.removeChild(downloadLink);
