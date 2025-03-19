@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Get both forms
-  const demoForm = document.getElementById('demo-form');
-  const whitepaperForm = document.getElementById('whitepaper-form');
+  // Get all forms
+  const betaForm = document.getElementById('demo-form'); // Keeping the ID but changing the purpose
+  const newsletterForm = document.getElementById('newsletter-form');
   
   // N8n webhook URL - replace this with your actual n8n webhook URL
   const N8N_WEBHOOK_URL = 'https://prasannak.app.n8n.cloud/webhook-test/demo-request';
   
-  // Handle demo request form submission
-  if (demoForm) {
-    demoForm.addEventListener('submit', function(e) {
+  // Handle beta registration form submission
+  if (betaForm) {
+    betaForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
       // Get form data
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const teamSize = document.getElementById('demo-team-size').value;
       
       // Show loading state
-      const submitButton = demoForm.querySelector('button[type="submit"]');
+      const submitButton = betaForm.querySelector('button[type="submit"]');
       const originalButtonText = submitButton.textContent;
       submitButton.disabled = true;
       submitButton.textContent = 'Submitting...';
       
       // Remove any existing error messages
-      const existingError = demoForm.querySelector('.error-message');
+      const existingError = betaForm.querySelector('.error-message');
       if (existingError) {
         existingError.remove();
       }
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
           company: company,
           email: email,
           teamSize: teamSize,
-          formType: 'demo',
+          formType: 'beta',
           source: window.location.href,
           timestamp: new Date().toISOString()
         })
@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(data => {
         // Show success message
-        demoForm.innerHTML = '<div class="success-message"><h3>Thank you for your interest!</h3><p>We\'ll be in touch shortly to schedule your executive demo.</p></div>';
+        betaForm.innerHTML = '<div class="success-message"><h3>Thank you for joining our beta!</h3><p>We\'ll notify you when beta access becomes available. We\'re currently building in public and will keep you updated on our progress.</p></div>';
         
         // Track form submission event (if analytics is set up)
         if (typeof gtag === 'function') {
-          gtag('event', 'demo_request', {
+          gtag('event', 'beta_registration', {
             'event_category': 'form',
-            'event_label': 'executive_demo',
+            'event_label': 'beta_access',
             'product_focus': 'bigtech_capabilities'
           });
         }
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
         errorDiv.textContent = 'There was an error submitting your request. Please try again or contact us directly.';
-        demoForm.prepend(errorDiv);
+        betaForm.prepend(errorDiv);
         
         // Log error
         console.error('Error:', error);
@@ -81,22 +81,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Handle whitepaper form submission
-  if (whitepaperForm) {
-    whitepaperForm.addEventListener('submit', function(e) {
+  // Handle newsletter form submission
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
       // Get form data
-      const email = document.getElementById('whitepaper-email').value;
+      const email = newsletterForm.querySelector('input[type="email"]').value;
       
       // Show loading state
-      const submitButton = whitepaperForm.querySelector('button[type="submit"]');
+      const submitButton = newsletterForm.querySelector('button[type="submit"]');
       const originalButtonText = submitButton.textContent;
       submitButton.disabled = true;
-      submitButton.textContent = 'Downloading...';
+      submitButton.textContent = 'Subscribing...';
       
       // Remove any existing error messages
-      const existingError = whitepaperForm.querySelector('.error-message');
+      const existingError = newsletterForm.querySelector('.error-message');
       if (existingError) {
         existingError.remove();
       }
@@ -109,8 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         body: JSON.stringify({
           email: email,
-          formType: 'whitePaper',
-          whitePaperType: 'engineering_excellence',
+          formType: 'newsletter',
           source: window.location.href,
           timestamp: new Date().toISOString()
         })
@@ -122,27 +121,22 @@ document.addEventListener('DOMContentLoaded', function() {
         return response.json();
       })
       .then(data => {
-        // Show success message and download link
-        whitepaperForm.innerHTML = '<div class="success-message"><h3>Thank you!</h3><p>Your whitepaper is ready. <a href="assets/files/LegacyBoost-Engineering-Excellence.pdf" download>Download now</a></p></div>';
+        // Show success message
+        const formContainer = newsletterForm.parentElement;
+        newsletterForm.remove();
+        
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = '<p>Thanks for subscribing! We\'ll send you weekly updates on our build journey.</p>';
+        formContainer.appendChild(successMessage);
         
         // Track form submission event (if analytics is set up)
         if (typeof gtag === 'function') {
-          gtag('event', 'whitepaper_download', {
+          gtag('event', 'newsletter_subscription', {
             'event_category': 'form',
-            'event_label': 'engineering_excellence',
-            'whitepaper_type': 'engineering_excellence'
+            'event_label': 'build_journey'
           });
         }
-        
-        // After a delay, automatically trigger the download
-        setTimeout(function() {
-          const downloadLink = document.createElement('a');
-          downloadLink.href = 'assets/files/LegacyBoost-Engineering-Excellence.pdf';
-          downloadLink.download = 'LegacyBoost-Engineering-Excellence.pdf';
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          document.body.removeChild(downloadLink);
-        }, 1500);
       })
       .catch(error => {
         // Reset button
@@ -152,8 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show error message
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.textContent = 'There was an error processing your request. Please try again or contact us directly.';
-        whitepaperForm.prepend(errorDiv);
+        errorDiv.textContent = 'There was an error subscribing you. Please try again or contact us directly.';
+        newsletterForm.prepend(errorDiv);
         
         // Log error
         console.error('Error:', error);
